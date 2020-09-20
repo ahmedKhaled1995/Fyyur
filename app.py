@@ -14,6 +14,8 @@ from flask_wtf import Form
 from forms import *
 
 from flask_migrate import Migrate
+from datetime import datetime
+
 #----------------------------------------------------------------------------#
 # App Config.
 #----------------------------------------------------------------------------#
@@ -72,13 +74,25 @@ class Artist(db.Model):
     city = db.Column(db.String(120), nullable=True)
     state = db.Column(db.String(120), nullable=True)
     phone = db.Column(db.String(120), nullable=True)
-    genres = db.Column(db.String(120), nullable=True)
+    genres = genres = db.Column(db.ARRAY(db.String), nullable=True)
     image_link = db.Column(db.String(500), nullable=True)
     facebook_link = db.Column(db.String(120), nullable=True)
+    website = db.Column(db.String(), nullable=True)
+    seeking_venue = db.Column(db.String(), nullable=True)
+    seeking_description = db.Column(db.String(), nullable=True)
     shows = db.relationship("Show", backref="artist", lazy=True, cascade="all, delete-orphan")
 
-    def __init__(self, name):
+    def __init__(self, name, city, state, phone, genres, image_link, facebook_link, website, seeking_venue, seeking_description):
       self.name = name
+      self.city = city
+      self.state = state
+      self.phone = phone
+      self.genres = genres
+      self.image_link = image_link
+      self.facebook_link = facebook_link
+      self.website = website
+      self.seeking_venue = seeking_venue
+      self.seeking_description = seeking_description
 
     def __str__(self):
       return {"id": self.id, "name": self.name}
@@ -93,37 +107,15 @@ class Show(db.Model):
   venue_id =  db.Column(db.Integer, db.ForeignKey("venues.id"), nullable=False)
   artist_id = db.Column(db.Integer, db.ForeignKey("artists.id"), nullable=False)
 
+  def __init__(self, date, venue_id, artist_id):
+    self.show_date = date
+    self.venue_id = venue_id
+    self.artist_id = artist_id
+
   def __str__(self):
     return {"id": self.id, "venue_id": self.venue_id, "artist_id": self.artist_id}
-'''
-v1 = Venue('The Musical Hop', 'San Francisco', 'CA', '11A, National tr, prox St')
-v2 = Venue('Park Square Live Music & Coffee', 'San Francisco', 'CA', 'Address_2')
-v3 = Venue('The Dueling Pianos Bar', 'New York', 'NY', 'Address_Ny')
-db.session.add_all([v1, v2, v3])
-db.session.commit()
-'''
-'''
-# First we get the unique cities in our venues table
-cities = []
-for venue_entry in db.session.query(Venue.city).distinct():
-  city = venue_entry[0]
-  cities.append(city)
-# Now we loop the cities to get the available venues
-venues_arr = []
-for city in cities:
-  venue_data = Venue.query.filter(Venue.city == city).all()
-  venues_arr.append(venue_data)
-# Forming the response
-data_temp = []
-for i in range(len(cities)):
-  data_temp.append({
-    "city": cities[i],
-    "state": venues_arr[i][0].state,
-    "venues": venues_arr[i]
-  })
 
-print(data_temp)
-'''
+
 #----------------------------------------------------------------------------#
 # Filters.
 #----------------------------------------------------------------------------#
