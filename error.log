@@ -1,1 +1,293 @@
 
+2020-09-20 22:58:14,960 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:542]
+2020-09-20 22:58:45,149 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:542]
+2020-09-20 23:32:46,422 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:554]
+2020-09-20 23:33:07,687 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:556]
+2020-09-20 23:34:34,172 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:557]
+2020-09-20 23:37:25,186 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:560]
+2020-09-20 23:45:43,797 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:584]
+2020-09-20 23:47:07,733 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:584]
+2020-09-20 23:49:17,157 ERROR: Exception on /venues/3 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 287, in show_venue
+    return render_template('pages/show_venue.html', venue=data)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 126, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-20 23:49:33,695 ERROR: Exception on /venues/3 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 287, in show_venue
+    return render_template('pages/show_venue.html', venue=data)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_venue.html", line 57, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 126, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-20 23:49:35,375 ERROR: Exception on /venues/6 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 286, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-20 23:49:37,328 ERROR: Exception on /venues/1 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 287, in show_venue
+    return render_template('pages/show_venue.html', venue=data)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_venue.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_venue.html", line 71, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 126, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-20 23:49:42,680 ERROR: Exception on /venues/4 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 286, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-20 23:49:44,591 ERROR: Exception on /venues/5 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 286, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-20 23:58:05,409 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:564]
+2020-09-20 23:58:12,677 ERROR: Exception on /venues/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 174, in search_venues
+    print(rerquest.get_json())
+NameError: name 'rerquest' is not defined
+2020-09-20 23:58:38,892 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:564]
+2020-09-20 23:59:30,462 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:564]
+2020-09-21 00:04:34,612 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:566]
+2020-09-21 00:07:40,988 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:570]
+2020-09-21 00:13:06,712 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:562]
+2020-09-21 00:13:22,510 ERROR: Exception on /venues/6 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 263, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-21 00:13:33,452 ERROR: Exception on /venues/4 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 263, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-21 00:13:35,065 ERROR: Exception on /venues/4 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 263, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-21 00:13:43,337 ERROR: Exception on /venues/5 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 263, in show_venue
+    data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+IndexError: list index out of range
+2020-09-21 00:14:38,046 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:485]
