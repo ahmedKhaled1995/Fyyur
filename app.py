@@ -121,8 +121,6 @@ class Show(db.Model):
 # Margin:
 #---------
 
-
-
 #----------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------#
@@ -213,35 +211,57 @@ def search_venues():
 @app.route('/venues/<int:venue_id>')
 def show_venue(venue_id):
   # shows the venue page with the given venue_id
-  # TODO: replace with real venue data from the venues table, using venue_id
+  # TODO_done: replace with real venue data from the venues table, using venue_id
+
+  # Getting the venue
   venue = Venue.query.filter(Venue.id == venue_id).first()
 
-  data1 = {
+  # Forming the past shows arr
+  venue_past_show = [show for show in venue.shows if show.show_date < datetime.now()]
+  venue_past_show_with_artist_details = []
+  for show in venue_past_show:
+    show_artist = Artist.query.filter(Artist.id == show.artist_id).first()
+    venue_past_show_with_artist_details.append({
+      "artist_id": show_artist.id,
+      "artist_name": show_artist.name,
+      "artist_image_link": show_artist.image_link,
+      "start_time": show.show_date.strftime("%m/%d/%Y, %H:%M:%S")
+    })
+
+  # Forming the upcoming shows arr
+  venue_upcoming_show = [show for show in venue.shows if show.show_date > datetime.now()]
+  venue_upcoming_show_with_artist_details = []
+  for show in venue_upcoming_show:
+    show_artist = Artist.query.filter(Artist.id == show.artist_id).first()
+    venue_upcoming_show_with_artist_details.append({
+      "artist_id": show_artist.id,
+      "artist_name": show_artist.name,
+      "artist_image_link": show_artist.image_link,
+      "start_time": show.show_date.strftime("%m/%d/%Y, %H:%M:%S")
+    })
+
+  # Forming the response data
+  data = {
     "id": venue.id,
     "name": venue.name,
-    "genres": venue.genres,
+    "genres": venue.genres if venue.genres else [],
     "address": venue.address,
     "city": venue.city,
     "state": venue.state,
     "phone": venue.phone,
-    "website": "https://www.themusicalhop.com",
-    "facebook_link": "https://www.facebook.com/TheMusicalHop",
-    "seeking_talent": True,
-    "seeking_description": "We are on the lookout for a local artist to play every two weeks. Please call us.",
-    "image_link": "https://images.unsplash.com/photo-1543900694-133f37abaaa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
-    "past_shows": [{
-      "artist_id": 4,
-      "artist_name": "Guns N Petals",
-      "artist_image_link": "https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
-      "start_time": "2019-05-21T21:30:00.000Z"
-    }],
-    "upcoming_shows": [],
-    "past_shows_count": 1,
-    "upcoming_shows_count": 0,
+    "website": venue.website,
+    "facebook_link": venue.facebook_link,
+    "seeking_talent": venue.seeking_talent,
+    "seeking_description": venue.seeking_description,
+    "image_link": venue.image_link,
+    "past_shows": venue_past_show_with_artist_details,
+    "upcoming_shows": venue_upcoming_show_with_artist_details,
+    "past_shows_count": len(venue_past_show_with_artist_details),
+    "upcoming_shows_count": len(venue_upcoming_show_with_artist_details),
   }
 
 
-  return render_template('pages/show_venue.html', venue=venue)
+  return render_template('pages/show_venue.html', venue=data)
 
 #  Create Venue
 #  ----------------------------------------------------------------
@@ -255,6 +275,15 @@ def create_venue_form():
 def create_venue_submission():
   # TODO: insert form data as a new Venue record in the db, instead
   # TODO: modify data to be the data object returned from db insertion
+
+  # Getting the genres
+  genres = request.form.getlist('genres')
+  print(genres)
+
+  #for k,v in request.form.items():
+    #print(k,v)
+
+
 
   # on successful db insert, flash success
   flash('Venue ' + request.form['name'] + ' was successfully listed!')

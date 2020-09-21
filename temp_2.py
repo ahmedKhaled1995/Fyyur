@@ -84,3 +84,6 @@ for show in ven.shows:
         upcoming_shows += 1
 ven["num_upcoming_shows"] = upcoming_shows
 
+for key in request.form:
+    if key == 'genres':
+        print(request.form[f"{key}"])

@@ -107,3 +107,6 @@ data1={
     "upcoming_shows_count": 1,
   }
   data = list(filter(lambda d: d['id'] == venue_id, [data1, data2, data3]))[0]
+
+
+<!-- <h6>{{ show.start_time|datetime('full') }}</h6> -->
