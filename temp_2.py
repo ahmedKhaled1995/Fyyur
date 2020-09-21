@@ -87,3 +87,11 @@ ven["num_upcoming_shows"] = upcoming_shows
 for key in request.form:
     if key == 'genres':
         print(request.form[f"{key}"])
+
+
+
+ # on successful db insert, flash success
+  flash('Venue ' + request.form['name'] + ' was successfully listed!')
+  # TODO: on unsuccessful db insert, flash an error instead.
+  # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
+  # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/

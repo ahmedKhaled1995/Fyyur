@@ -5,7 +5,7 @@
 import json
 import dateutil.parser
 import babel
-from flask import Flask, render_template, request, Response, flash, redirect, url_for
+from flask import Flask, render_template, request, Response, flash, redirect, url_for, abort, jsonify
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 import logging
@@ -48,7 +48,7 @@ class Venue(db.Model):
     seeking_description = db.Column(db.String(), nullable=True)
     shows = db.relationship("Show", backref="venue", lazy=True, cascade="all, delete-orphan")
 
-    def __init__(self, name, city, state, address, phone, genres, image_link, facebook_link, website, seeking_talent, seeking_description):
+    def __init__(self, name, city, state, address, genres, phone, image_link, facebook_link, website, seeking_talent, seeking_description):
       self.name = name
       self.city = city
       self.state = state
@@ -273,33 +273,74 @@ def create_venue_form():
 
 @app.route('/venues/create', methods=['POST'])
 def create_venue_submission():
-  # TODO: insert form data as a new Venue record in the db, instead
-  # TODO: modify data to be the data object returned from db insertion
+  # TODO_done: insert form data as a new Venue record in the db, instead
+  # TODO_done: modify data to be the data object returned from db insertion
 
   # Getting the genres
   genres = request.form.getlist('genres')
-  print(genres)
 
-  #for k,v in request.form.items():
-    #print(k,v)
-
-
-
-  # on successful db insert, flash success
-  flash('Venue ' + request.form['name'] + ' was successfully listed!')
-  # TODO: on unsuccessful db insert, flash an error instead.
-  # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
-  # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
-  return render_template('pages/home.html')
+  # Trying to post the data to the database
+  seeking_talent = True if request.form['seeking_talent'] == "True" else False
+  posted_successfully = True
+  try:
+    venue = Venue(
+      request.form['name'],
+      request.form['city'],
+      request.form['state'],
+      request.form['address'],
+      request.form.getlist('genres'),
+      request.form['phone'],
+      request.form['image_link'],
+      request.form['facebook_link'],
+      request.form['website'],
+      seeking_talent,
+      request.form['seeking_description'],
+    )
+    db.session.add(venue)
+    db.session.commit()
+  except():
+    posted_successfully = False
+    db.session.rollback()
+  finally:
+    db.session.close()
+  if posted_successfully:
+    flash('Venue ' + request.form['name'] + ' was successfully listed!')
+    return render_template('pages/home.html')
+  else:
+    flash('Venue ' + request.form['name'] + ' was not successfully listed!')
+    return render_template('pages/home.html')
 
 @app.route('/venues/<venue_id>', methods=['DELETE'])
 def delete_venue(venue_id):
-  # TODO: Complete this endpoint for taking a venue_id, and using
+  # TODO_done: Complete this endpoint for taking a venue_id, and using
   # SQLAlchemy ORM to delete a record. Handle cases where the session commit could fail.
 
   # BONUS CHALLENGE: Implement a button to delete a Venue on a Venue Page, have it so that
   # clicking that button delete it from the db then redirect the user to the homepage
-  return None
+
+  # Note that upon successful deletion, the user will be directed to home page by the browser (from the frontend)
+  deleted_successfully = True
+  venue_name = ""
+  try:
+    venue = Venue.query.filter(Venue.id == venue_id).first()
+    venue_name = venue.name
+    # Deleting any shows in that venue
+    for show in venue.shows:
+      db.session.delete(show)
+    # Deleting the venue and saving
+    db.session.delete(venue)
+    db.session.commit()
+  except():
+    deleted_successfully = False
+    db.session.rollback()
+  finally:
+    db.session.close()
+  if deleted_successfully:
+    return jsonify({}), 204
+  else:
+    abort(400)
+
+
 
 #  Artists
 #  ----------------------------------------------------------------

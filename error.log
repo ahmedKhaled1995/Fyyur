@@ -1266,3 +1266,209 @@ Traceback (most recent call last):
     {{ form.seeking_venue(class_ = 'form-control', autofocus = true) }}
 jinja2.exceptions.UndefinedError: 'forms.ArtistForm object' has no attribute 'seeking_talent'
 2020-09-21 19:46:52,167 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:570]
+2020-09-21 19:48:48,374 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:570]
+2020-09-21 20:25:10,423 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:31:11,452 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:37:45,952 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:38:46,317 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:39:24,832 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:39:48,843 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:40:32,009 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:41:42,955 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:42:36,396 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:45:03,104 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:46:32,784 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:47:56,095 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:47:58,435 ERROR: Exception on /venues [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 189, in venues
+    return render_template('pages/venues.html', areas=data_temp);
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\venues.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %} {% block title %}Fyyur | Venues{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\venues.html", line 15, in block "content"
+    <a style="margin-left: 100px;" href="#" data-id="{{venue.id}}"
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'venue' is undefined
+2020-09-21 20:48:04,286 ERROR: Exception on /venues [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 189, in venues
+    return render_template('pages/venues.html', areas=data_temp);
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\venues.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %} {% block title %}Fyyur | Venues{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\venues.html", line 15, in block "content"
+    <a style="margin-left: 100px;" href="#" data-id="{{venue.id}}"
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'venue' is undefined
+2020-09-21 20:48:34,558 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:48:36,959 ERROR: Exception on /venues [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 189, in venues
+    return render_template('pages/venues.html', areas=data_temp);
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\venues.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %} {% block title %}Fyyur | Venues{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\venues.html", line 15, in block "content"
+    <a href="#" data-id="{{venue.id}}"><i class="fas fa-trash"></i></a>
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 471, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'venue' is undefined
+2020-09-21 20:49:17,116 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:49:48,840 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:50:23,695 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:50:58,755 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:51:22,366 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:51:51,753 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 20:59:00,826 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 21:04:33,495 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 21:04:48,462 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 21:05:12,024 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 21:05:38,826 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 21:06:31,022 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:588]
+2020-09-21 21:48:25,452 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:608]
+2020-09-21 21:48:59,136 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:608]
+2020-09-21 21:49:42,843 ERROR: Exception on /venues/14 [DELETE] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 326, in delete_venue
+    venue.delete()
+AttributeError: 'Venue' object has no attribute 'delete'
+2020-09-21 21:49:51,970 ERROR: Exception on /venues/14 [DELETE] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 326, in delete_venue
+    venue.delete()
+AttributeError: 'Venue' object has no attribute 'delete'
+2020-09-21 21:56:07,992 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:612]
+2020-09-21 21:56:24,349 ERROR: Exception on /venues/14 [DELETE] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 325, in delete_venue
+    venue_name = venue.name
+AttributeError: 'NoneType' object has no attribute 'name'
+2020-09-21 21:57:01,512 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:612]
+2020-09-21 21:59:22,264 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:610]
+2020-09-21 22:00:16,634 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:610]
+2020-09-21 22:00:58,926 ERROR: Exception on /venues/15 [DELETE] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 338, in delete_venue
+    return jsonify({}), 204
+NameError: name 'jsonify' is not defined
+2020-09-21 22:01:31,532 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:610]
