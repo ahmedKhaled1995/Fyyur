@@ -1472,3 +1472,264 @@ Traceback (most recent call last):
     return jsonify({}), 204
 NameError: name 'jsonify' is not defined
 2020-09-21 22:01:31,532 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:610]
+2020-09-21 22:04:06,295 ERROR: Exception on /artists/4 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 452, in show_artist
+    data = list(filter(lambda d: d['id'] == artist_id, [data1, data2, data3]))[0]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 68, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 136, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-21 22:04:09,532 ERROR: Exception on /artists/5 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 452, in show_artist
+    data = list(filter(lambda d: d['id'] == artist_id, [data1, data2, data3]))[0]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 68, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 136, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-21 22:04:10,998 ERROR: Exception on /artists/6 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 452, in show_artist
+    data = list(filter(lambda d: d['id'] == artist_id, [data1, data2, data3]))[0]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 54, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 136, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-21 22:33:51,738 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:608]
+2020-09-21 22:34:02,587 ERROR: Exception on /artists [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 352, in artists
+    for artist in artists:
+TypeError: 'function' object is not iterable
+2020-09-21 22:34:43,053 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:608]
+2020-09-21 22:34:47,204 ERROR: Exception on /artists [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 355, in artists
+    name: artist.name
+NameError: name 'name' is not defined
+2020-09-21 22:35:21,331 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:608]
+2020-09-21 22:40:30,879 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:612]
+2020-09-21 22:49:54,995 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:615]
+2020-09-21 22:50:08,491 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 366, in search_artists
+    found_artists = Artist.quert.filter(Artist.name.ilike(f"%{artist_name}%")).all()
+AttributeError: type object 'Artist' has no attribute 'quert'
+2020-09-21 22:50:24,387 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:615]
+2020-09-21 23:08:00,934 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:594]
+2020-09-21 23:08:10,187 ERROR: Exception on /artists/2 [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 436, in show_artist
+    return render_template('pages/show_artist.html', artist=data)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\show_artist.html", line 54, in block "content"
+    <h6>{{ show.start_time|datetime('full') }}</h6>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 136, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-21 23:09:00,836 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:594]
+2020-09-21 23:12:28,088 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:594]
+2020-09-21 23:13:18,193 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:594]
+2020-09-21 23:16:15,536 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:594]
+2020-09-21 23:16:23,246 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:594]
+2020-09-21 23:17:34,835 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:594]
+2020-09-21 23:17:42,658 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:594]
+2020-09-21 23:17:58,731 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:594]
+2020-09-21 23:18:51,485 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:594]
+2020-09-21 23:23:20,358 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:605]
+2020-09-21 23:24:25,897 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:606]
+2020-09-21 23:25:33,625 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:606]
+2020-09-21 23:28:01,144 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:610]
+2020-09-22 00:09:27,355 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:612]
+2020-09-22 00:38:28,739 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:631]

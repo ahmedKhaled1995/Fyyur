@@ -95,3 +95,16 @@ for key in request.form:
   # TODO: on unsuccessful db insert, flash an error instead.
   # e.g., flash('An error occurred. Venue ' + data.name + ' could not be listed.')
   # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
+#-------------------------------------------------------------------------------------------------------------------
+# Artists
+#--------
+data = [{
+    "id": 4,
+    "name": "Guns N Petals",
+}, {
+    "id": 5,
+    "name": "Matt Quevedo",
+}, {
+    "id": 6,
+    "name": "The Wild Sax Band",
+}]
