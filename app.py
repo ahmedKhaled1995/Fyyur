@@ -553,44 +553,27 @@ def create_artist_submission():
 @app.route('/shows')
 def shows():
   # displays list of shows at /shows
-  # TODO: replace with real venues data.
+  # TODO_done: replace with real venues data.
   #       num_shows should be aggregated based on number of upcoming shows per venue.
-  data=[{
-    "venue_id": 1,
-    "venue_name": "The Musical Hop",
-    "artist_id": 4,
-    "artist_name": "Guns N Petals",
-    "artist_image_link": "https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
-    "start_time": "2019-05-21T21:30:00.000Z"
-  }, {
-    "venue_id": 3,
-    "venue_name": "Park Square Live Music & Coffee",
-    "artist_id": 5,
-    "artist_name": "Matt Quevedo",
-    "artist_image_link": "https://images.unsplash.com/photo-1495223153807-b916f75de8c5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
-    "start_time": "2019-06-15T23:00:00.000Z"
-  }, {
-    "venue_id": 3,
-    "venue_name": "Park Square Live Music & Coffee",
-    "artist_id": 6,
-    "artist_name": "The Wild Sax Band",
-    "artist_image_link": "https://images.unsplash.com/photo-1558369981-f9ca78462e61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-    "start_time": "2035-04-01T20:00:00.000Z"
-  }, {
-    "venue_id": 3,
-    "venue_name": "Park Square Live Music & Coffee",
-    "artist_id": 6,
-    "artist_name": "The Wild Sax Band",
-    "artist_image_link": "https://images.unsplash.com/photo-1558369981-f9ca78462e61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-    "start_time": "2035-04-08T20:00:00.000Z"
-  }, {
-    "venue_id": 3,
-    "venue_name": "Park Square Live Music & Coffee",
-    "artist_id": 6,
-    "artist_name": "The Wild Sax Band",
-    "artist_image_link": "https://images.unsplash.com/photo-1558369981-f9ca78462e61?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=794&q=80",
-    "start_time": "2035-04-15T20:00:00.000Z"
-  }]
+
+  # Getting all the available shows
+  all_shows = Show.query.all()
+
+  # Forming the response data
+  data = []
+  for show in all_shows:
+    show_venue = Venue.query.filter(Venue.id == show.venue_id).first()
+    show_artist = Artist.query.filter(Artist.id == show.artist_id).first()
+    data.append({
+      "venue_id": show_venue.id,
+      "venue_name": show_venue.name,
+      "artist_id": show_artist.id,
+      "artist_name": show_artist.name,
+      "artist_image_link": show_artist.image_link,
+      "start_time": show.show_date.strftime("%m/%d/%Y, %H:%M:%S")
+    })
+
+  # Sending the response data
   return render_template('pages/shows.html', shows=data)
 
 @app.route('/shows/create')
@@ -602,14 +585,51 @@ def create_shows():
 @app.route('/shows/create', methods=['POST'])
 def create_show_submission():
   # called to create new shows in the db, upon submitting new show listing form
-  # TODO: insert form data as a new Show record in the db, instead
+  # TODO_done: insert form data as a new Show record in the db, instead
 
-  # on successful db insert, flash success
-  flash('Show was successfully listed!')
-  # TODO: on unsuccessful db insert, flash an error instead.
-  # e.g., flash('An error occurred. Show could not be listed.')
-  # see: http://flask.pocoo.org/docs/1.0/patterns/flashing/
-  return render_template('pages/home.html')
+  # Getting and parsing the form
+  error_parsing_input = False
+  artist_id = 0
+  venue_id = 0
+  show_time = None
+  try:
+    artist_id = int(request.form['artist_id'])
+    venue_id = int(request.form['venue_id'])
+    show_time = datetime.strptime(request.form['start_time'], '%Y-%m-%d %H:%M:%S')
+  except(ValueError):
+    error_parsing_input = True
+  if error_parsing_input:
+    flash('Please enter valid input!')
+    return render_template('pages/home.html')
+
+  # Checking if the artist and venue exist
+  valid_data = True
+  venue = Venue.query.filter(Venue.id == venue_id).first()
+  artist = Artist.query.filter(Artist.id == artist_id).first()
+  if not venue or not artist:
+    valid_data = False
+  if not valid_data:
+    flash('Please enter an existing venue and artist!')
+    return render_template('pages/home.html')
+
+  # Posting the show
+  posted_successfully = True
+  try:
+    show = Show(show_time, venue_id, artist_id)
+    db.session.add(show)
+    db.session.commit()
+  except():
+    posted_successfully = False
+    db.session.rollback()
+  finally:
+    db.session.close()
+  if posted_successfully:
+    flash('Show was successfully listed!')
+    return render_template('pages/home.html')
+  else:
+    flash('Show was not successfully listed!')
+    return render_template('pages/home.html')
+
 
 @app.errorhandler(404)
 def not_found_error(error):

@@ -6,7 +6,7 @@ window.parseISOString = function parseISOString(s) {
 document.addEventListener("DOMContentLoaded", () => {
   console.log("Page loaded");
 
-  // Defining a  delete handler for deleting venues
+  // Defining a delete handler for deleting venues
   const deleteVenueHandler = async (e) => {
     const venueId = e.target.parentNode.getAttribute("data-id");
     try {

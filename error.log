@@ -1733,3 +1733,129 @@ AttributeError: 'NoneType' object has no attribute 'days'
 2020-09-21 23:28:01,144 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:610]
 2020-09-22 00:09:27,355 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:612]
 2020-09-22 00:38:28,739 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:631]
+2020-09-22 00:54:35,542 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:611]
+2020-09-22 00:54:44,466 ERROR: Exception on /shows [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 574, in shows
+    return render_template('pages/shows.html', shows=data)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\shows.html", line 1, in top-level template code
+    {% extends 'layouts/main.html' %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\layouts\main.html", line 103, in top-level template code
+    {% block content %}{% endblock %}
+  File "C:\Projects\Udacity\Python\Fyyur\templates\pages\shows.html", line 9, in block "content"
+    <h4>{{ show.start_time|datetime('full') }}</h4>
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 131, in format_datetime
+    date = dateutil.parser.parse(value)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\dateutil\parser.py", line 1168, in parse
+    return DEFAULTPARSER.parse(timestr, **kwargs)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\dateutil\parser.py", line 556, in parse
+    res, skipped_tokens = self._parse(timestr, **kwargs)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\dateutil\parser.py", line 675, in _parse
+    l = _timelex.split(timestr)         # Splits the timestr into tokens
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\dateutil\parser.py", line 192, in split
+    return list(cls(s))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\dateutil\parser.py", line 61, in __init__
+    '{itype}'.format(itype=instream.__class__.__name__))
+TypeError: Parser must be a string or character stream, not datetime
+2020-09-22 00:55:38,690 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:611]
+2020-09-22 01:03:30,647 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:616]
+2020-09-22 01:08:08,205 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:616]
+2020-09-22 01:08:38,628 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:616]
+2020-09-22 01:12:01,457 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:623]
+2020-09-22 01:12:10,712 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 591, in create_show_submission
+    artist_id = int(request.form['artist_id'])
+ValueError: invalid literal for int() with base 10: 'asd'
+2020-09-22 01:12:38,465 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:623]
+2020-09-22 01:14:19,152 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:625]
+2020-09-22 01:14:35,303 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 594, in create_show_submission
+    show_time = datetime(request.form['start_time'])
+TypeError: an integer is required (got type str)
+2020-09-22 01:15:32,099 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:625]
+2020-09-22 01:15:38,991 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 594, in create_show_submission
+    show_time = datetime(format_datetime(request.form['start_time']))
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 136, in format_datetime
+    return babel.dates.format_datetime(date, format)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 738, in format_datetime
+    return parse_pattern(format).apply(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1232, in apply
+    return self % DateTimeFormat(datetime, locale)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1229, in __mod__
+    return self.format % other
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1264, in __getitem__
+    return self.format_weekday(char, num)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 1397, in format_weekday
+    return get_day_names(width, context, self.locale)[weekday]
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\babel\dates.py", line 314, in get_day_names
+    return Locale.parse(locale).days[context][width]
+AttributeError: 'NoneType' object has no attribute 'days'
+2020-09-22 01:18:13,904 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:626]
+2020-09-22 01:18:53,396 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:627]
+2020-09-22 01:19:52,258 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:627]
+2020-09-22 01:20:36,220 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:627]
+2020-09-22 01:21:30,371 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:627]
+2020-09-22 01:21:57,747 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:627]
+2020-09-22 01:35:23,144 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:651]
