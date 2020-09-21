@@ -299,3 +299,102 @@ IndexError: list index out of range
 2020-09-21 01:14:42,769 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:485]
 2020-09-21 01:14:51,867 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:504]
 2020-09-21 01:25:15,820 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:493]
+2020-09-21 13:32:21,261 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:493]
+2020-09-21 13:41:24,572 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:503]
+2020-09-21 13:41:37,995 ERROR: Exception on /venues [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 164, in venues
+    states.append(state)
+NameError: name 'state' is not defined
+2020-09-21 13:42:08,151 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:503]
+2020-09-21 13:42:16,290 ERROR: Exception on /venues [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 173, in venues
+    for show in ven.shows:
+AttributeError: 'list' object has no attribute 'shows'
+2020-09-21 13:44:27,857 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:504]
+2020-09-21 13:44:35,161 ERROR: Exception on /venues [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 177, in venues
+    ven["num_upcoming_shows"] = upcoming_shows
+TypeError: 'Venue' object does not support item assignment
+2020-09-21 13:47:48,874 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:504]
+2020-09-21 13:48:24,771 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:512]
+2020-09-21 13:49:36,662 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:516]
+2020-09-21 13:50:12,724 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:516]
+2020-09-21 13:55:19,936 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:505]
+2020-09-21 13:56:20,890 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:505]
+2020-09-21 13:56:33,973 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:505]
+2020-09-21 13:56:46,686 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:505]
+2020-09-21 13:57:34,424 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:505]
+2020-09-21 13:58:21,621 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:515]
+2020-09-21 14:00:48,467 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:524]
+2020-09-21 14:09:20,193 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:525]
+2020-09-21 14:09:44,452 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:11:24,879 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:14:14,128 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:17:39,547 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:530]
+2020-09-21 14:19:35,573 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:23:15,837 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:25:39,677 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:528]
+2020-09-21 14:26:41,544 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:528]
+2020-09-21 14:27:21,711 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:528]
+2020-09-21 14:27:56,946 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:30:41,505 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:35:40,459 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:37:40,514 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 14:39:07,069 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:530]
+2020-09-21 14:39:23,599 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:530]
+2020-09-21 14:39:52,275 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:531]
+2020-09-21 14:40:17,597 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:531]
+2020-09-21 14:41:30,112 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:530]
+2020-09-21 14:42:15,504 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:530]
+2020-09-21 14:43:19,467 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:526]
+2020-09-21 14:43:39,195 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:527]
+2020-09-21 14:44:32,372 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:526]
+2020-09-21 14:45:27,697 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:526]
+2020-09-21 14:46:15,582 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:526]
+2020-09-21 14:47:04,864 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:527]
+2020-09-21 14:55:44,493 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:528]
+2020-09-21 15:00:54,738 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:530]
+2020-09-21 15:01:05,128 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:529]
+2020-09-21 15:07:07,589 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:532]
+2020-09-21 15:58:29,132 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:539]
+2020-09-21 16:04:59,084 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:519]
+2020-09-21 16:05:21,800 INFO: errors [in C:\Projects\Udacity\Python\Fyyur\app.py:519]

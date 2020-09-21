@@ -78,3 +78,9 @@ for i in range(len(cities)):
 
 print(data_temp)
 '''
+
+for show in ven.shows:
+    if show.show_date > datetime.now():
+        upcoming_shows += 1
+ven["num_upcoming_shows"] = upcoming_shows
+

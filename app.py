@@ -40,6 +40,7 @@ class Venue(db.Model):
     state = db.Column(db.String(120), nullable=False)
     address = db.Column(db.String(120), nullable=False)
     phone = db.Column(db.String(120), nullable=True)
+    genres = genres = db.Column(db.ARRAY(db.String()), nullable=True)
     image_link = db.Column(db.String(500), nullable=True)
     facebook_link = db.Column(db.String(120), nullable=True)
     website = db.Column(db.String(), nullable=True)
@@ -47,11 +48,12 @@ class Venue(db.Model):
     seeking_description = db.Column(db.String(), nullable=True)
     shows = db.relationship("Show", backref="venue", lazy=True, cascade="all, delete-orphan")
 
-    def __init__(self, name, city, state, address, phone, image_link, facebook_link, website, seeking_talent, seeking_description):
+    def __init__(self, name, city, state, address, phone, genres, image_link, facebook_link, website, seeking_talent, seeking_description):
       self.name = name
       self.city = city
       self.state = state
       self.address = address
+      self.genres = genres
       self.phone = phone
       self.image_link = image_link
       self.facebook_link = facebook_link
@@ -74,7 +76,7 @@ class Artist(db.Model):
     city = db.Column(db.String(120), nullable=True)
     state = db.Column(db.String(120), nullable=True)
     phone = db.Column(db.String(120), nullable=True)
-    genres = genres = db.Column(db.ARRAY(db.String), nullable=True)
+    genres = genres = db.Column(db.ARRAY(db.String()), nullable=True)
     image_link = db.Column(db.String(500), nullable=True)
     facebook_link = db.Column(db.String(120), nullable=True)
     website = db.Column(db.String(), nullable=True)
@@ -115,6 +117,13 @@ class Show(db.Model):
   def __str__(self):
     return {"id": self.id, "venue_id": self.venue_id, "artist_id": self.artist_id}
 
+#----------------------------------------------------------------------------#
+# Margin:
+#---------
+
+
+
+#----------------------------------------------------------------------------#
 
 #----------------------------------------------------------------------------#
 # Filters.
@@ -147,23 +156,37 @@ def venues():
   # TODO_done: replace with real venues data.
   #       num_shows should be aggregated based on number of upcoming shows per venue.
 
-  # First we get the unique cities in our venues table
+  # First we get the unique cities (and states) in our venues table
   cities = []
-  for venue_entry in db.session.query(Venue.city).distinct():
-    city = venue_entry[0]
+  states = []
+  for entry in db.session.query(Venue.city, Venue.state).distinct():
+    city = entry[0]
+    state = entry[1]
     cities.append(city)
+    states.append(state)
   # Now we loop the cities to get the available venues
   venues_arr = []
   for city in cities:
     venue_data = Venue.query.filter(Venue.city == city).all()
     venues_arr.append(venue_data)
+  # Formong the upcoming shows and venues arr
+  new_venues_arr = []
+  for arr in venues_arr:
+    new_venues_arr.append([])
+  for i in range(len(venues_arr)):
+    for ven in venues_arr[i]:
+      new_venues_arr[i].append({
+        "id": ven.id,
+        "name": ven.name,
+        "num_upcoming_shows": len([show for show in ven.shows if show.show_date > datetime.now()]),
+      })
   # Forming the response
   data_temp = []
   for i in range(len(cities)):
     data_temp.append({
       "city": cities[i],
-      "state": venues_arr[i][0].state,
-      "venues" : venues_arr[i]
+      "state": states[i],
+      "venues" : new_venues_arr[i]
     })
   return render_template('pages/venues.html', areas=data_temp);
 
@@ -173,10 +196,17 @@ def search_venues():
   # seach for Hop should return "The Musical Hop".
   # search for "Music" should return "The Musical Hop" and "Park Square Live Music & Coffee"
   form_value = request.form.get('search_term')
-  found_venues = Venue.query.filter(Venue.name.like(f'%{form_value}%')).all()
+  found_venues = Venue.query.filter(Venue.name.ilike(f'%{form_value}%')).all()
+  data = []
+  for venue in found_venues:
+    data.append({
+    "id": venue.id,
+    "name": venue.name,
+    "num_upcoming_shows": len([show for show in venue.shows if show.show_date > datetime.now()])
+  })
   response_temp = {
     "count": len(found_venues),
-    "data": found_venues
+    "data": data
   }
   return render_template('pages/search_venues.html', results=response_temp, search_term=request.form.get('search_term', ''))
 
@@ -184,9 +214,34 @@ def search_venues():
 def show_venue(venue_id):
   # shows the venue page with the given venue_id
   # TODO: replace with real venue data from the venues table, using venue_id
+  venue = Venue.query.filter(Venue.id == venue_id).first()
 
-  data_temp = Venue.query.filter(Venue.id == venue_id).all()
-  return render_template('pages/show_venue.html', venue=data_temp)
+  data1 = {
+    "id": venue.id,
+    "name": venue.name,
+    "genres": venue.genres,
+    "address": venue.address,
+    "city": venue.city,
+    "state": venue.state,
+    "phone": venue.phone,
+    "website": "https://www.themusicalhop.com",
+    "facebook_link": "https://www.facebook.com/TheMusicalHop",
+    "seeking_talent": True,
+    "seeking_description": "We are on the lookout for a local artist to play every two weeks. Please call us.",
+    "image_link": "https://images.unsplash.com/photo-1543900694-133f37abaaa5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=400&q=60",
+    "past_shows": [{
+      "artist_id": 4,
+      "artist_name": "Guns N Petals",
+      "artist_image_link": "https://images.unsplash.com/photo-1549213783-8284d0336c4f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=300&q=80",
+      "start_time": "2019-05-21T21:30:00.000Z"
+    }],
+    "upcoming_shows": [],
+    "past_shows_count": 1,
+    "upcoming_shows_count": 0,
+  }
+
+
+  return render_template('pages/show_venue.html', venue=venue)
 
 #  Create Venue
 #  ----------------------------------------------------------------
