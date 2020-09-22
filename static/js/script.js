@@ -4,8 +4,6 @@ window.parseISOString = function parseISOString(s) {
 };
 
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Page loaded");
-
   // Defining a delete handler for deleting venues
   const deleteVenueHandler = async (e) => {
     const venueId = e.target.parentNode.getAttribute("data-id");
@@ -21,5 +19,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const venueDeleteLinks = [...document.querySelectorAll(".delete_venue")];
   venueDeleteLinks.forEach((item) => {
     item.addEventListener("click", deleteVenueHandler);
+  });
+
+  // Defining an edit handler for editing artists
+  const editArtist = (e) => {
+    const artistId = e.target.getAttribute("data-id");
+    window.location.replace(`/artists/${artistId}/edit`);
+  };
+  // Adding the event handler to the edit artist button
+  const editArtistButtons = [...document.querySelectorAll(".edit-artist")];
+  editArtistButtons.forEach((item) => {
+    item.addEventListener("click", editArtist);
+  });
+
+  // Defining an edit handler for editing venues
+  const editVenue = (e) => {
+    const venueId = e.target.getAttribute("data-id");
+    console.log(venueId);
+    window.location.replace(`/venues/${venueId}/edit`);
+  };
+  // Adding the event handler to the edit artist button
+  const editVenueButtons = [...document.querySelectorAll(".edit-venue")];
+  editVenueButtons.forEach((item) => {
+    item.addEventListener("click", editVenue);
   });
 });

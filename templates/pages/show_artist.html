@@ -2,9 +2,18 @@
 endblock %} {% block content %}
 <div class="row">
   <div class="col-sm-6">
-    <h1 class="monospace">
-      {{ artist.name }}
-    </h1>
+    <div class="wrapper" style="display: flex;">
+      <h1 class="monospace">
+        {{ artist.name }}
+      </h1>
+      <button
+        data-id="{{artist.id}}"
+        class="edit-artist"
+        style="margin-left: 16px; background-color: sandybrown;"
+      >
+        Edit {{ artist.name }}
+      </button>
+    </div>
     <p class="subtitle">
       ID: {{ artist.id }}
     </p>
