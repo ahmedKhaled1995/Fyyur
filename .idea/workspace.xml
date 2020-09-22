@@ -2,18 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="56fee982-5ea0-4dca-a168-984f7656ee2f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/helper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.py" beforeDir="false" afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error.log" beforeDir="false" afterPath="$PROJECT_DIR$/error.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/script.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/edit_artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/edit_artist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/edit_venue.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/edit_venue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/new_artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/new_artist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/new_show.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/new_show.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/forms/new_venue.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/forms/new_venue.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/show_artist.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/show_artist.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/pages/show_venue.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/pages/show_venue.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,25 +85,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="717" y="323" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1600642617094" />
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1600781967065">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom" timestamp="1600818418069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600781967065" />
-    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1600781967065">
+    <state width="1899" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1600818418069" />
+    <state width="1899" height="282" key="GridCell.Tab.0.center" timestamp="1600818418069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600781967065" />
-    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1600781967064">
+    <state width="1899" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1600818418069" />
+    <state width="1899" height="282" key="GridCell.Tab.0.left" timestamp="1600818418069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600781967064" />
-    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1600781967065">
+    <state width="1899" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1600818418069" />
+    <state width="1899" height="282" key="GridCell.Tab.0.right" timestamp="1600818418069">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600781967065" />
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1600781848359">
+    <state width="1899" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1600818418069" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog" timestamp="1600808001404">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600781848359" />
+    <state x="656" y="344" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1600808001404" />
   </component>
 </project>
