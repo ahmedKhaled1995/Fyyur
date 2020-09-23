@@ -2436,3 +2436,548 @@ LINE 1: ...ins', 'grafton', 'MA',  '13 Pullard rd, unit 19', {Blues, Fu...
 (Background on this error at: http://sqlalche.me/e/13/f405)
 2020-09-23 01:37:48,067 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:782]
 2020-09-23 01:46:59,168 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:776]
+2020-09-23 14:57:50,938 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:759]
+2020-09-23 14:58:00,234 ERROR: Exception on /artists [GET] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 401, in artists
+    "id": artist.id,
+AttributeError: 'dict' object has no attribute 'id'
+2020-09-23 14:58:23,612 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:759]
+2020-09-23 15:03:47,194 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:764]
+2020-09-23 15:03:57,608 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: relation "artistss" does not exist
+LINE 1: SELECT * FROM artistss WHERE name ILIKE '%snake%';
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 415, in search_artists
+    found_venues = query_to_dict(db.engine.execute(sql))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "artistss" does not exist
+LINE 1: SELECT * FROM artistss WHERE name ILIKE '%snake%';
+                      ^
+
+[SQL: SELECT * FROM artistss WHERE name ILIKE '%%snake%%';]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 15:04:17,262 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:764]
+2020-09-23 15:04:18,784 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 420, in search_artists
+    for artist in found_artists:
+NameError: name 'found_artists' is not defined
+2020-09-23 15:04:20,653 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 420, in search_artists
+    for artist in found_artists:
+NameError: name 'found_artists' is not defined
+2020-09-23 15:04:50,271 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:764]
+2020-09-23 15:04:51,785 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 421, in search_artists
+    sql = text(f"SELECT * FROM shows WHERE show_id = {artist.id} AND show_date > now();")
+AttributeError: 'dict' object has no attribute 'id'
+2020-09-23 15:04:52,813 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 421, in search_artists
+    sql = text(f"SELECT * FROM shows WHERE show_id = {artist.id} AND show_date > now();")
+AttributeError: 'dict' object has no attribute 'id'
+2020-09-23 15:05:13,301 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:764]
+2020-09-23 15:05:14,798 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "show_id" does not exist
+LINE 1: SELECT * FROM shows WHERE show_id = 2 AND show_date > now();
+                                  ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 422, in search_artists
+    upcoming_shows = query_to_dict(db.engine.execute(sql))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "show_id" does not exist
+LINE 1: SELECT * FROM shows WHERE show_id = 2 AND show_date > now();
+                                  ^
+
+[SQL: SELECT * FROM shows WHERE show_id = 2 AND show_date > now();]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 15:05:16,087 ERROR: Exception on /artists/search [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "show_id" does not exist
+LINE 1: SELECT * FROM shows WHERE show_id = 2 AND show_date > now();
+                                  ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 422, in search_artists
+    upcoming_shows = query_to_dict(db.engine.execute(sql))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "show_id" does not exist
+LINE 1: SELECT * FROM shows WHERE show_id = 2 AND show_date > now();
+                                  ^
+
+[SQL: SELECT * FROM shows WHERE show_id = 2 AND show_date > now();]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 15:05:38,003 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:764]
+2020-09-23 15:36:41,735 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:783]
+2020-09-23 15:41:29,422 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:789]
+2020-09-23 15:49:37,730 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:791]
+2020-09-23 16:02:08,136 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:787]
+2020-09-23 16:10:15,048 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:783]
+2020-09-23 16:16:11,564 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:773]
+2020-09-23 16:16:35,405 ERROR: Exception on /venues/11/edit [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "seeking_venue" of relation "venues" does not exist
+LINE 1: ...e = 'https://hassanin-portofolio.herokuapp.com/', seeking_ve...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 612, in edit_venue_submission
+    db.engine.execute(sql)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "seeking_venue" of relation "venues" does not exist
+LINE 1: ...e = 'https://hassanin-portofolio.herokuapp.com/', seeking_ve...
+                                                             ^
+
+[SQL: UPDATE venues SET name = 'Park Square Live Music & Coffee', city = 'San Francisco', state = 'CA', address = 'Address_2', phone = '02-22578621', genres = ARRAY ['Alternative', 'Blues', 'Classical'], image_link = 'https://images.unsplash.com/photo-1497032205916-ac775f0649ae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80', facebook_link = 'https://www.facebook.com/ahmed.khaled.739', website = 'https://hassanin-portofolio.herokuapp.com/', seeking_venue = False, seeking_description = 'This is a description text two!' WHERE id = 11; ]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 16:17:10,986 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:773]
+2020-09-23 16:24:21,101 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:762]
+2020-09-23 17:07:53,881 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:765]
+2020-09-23 17:15:09,392 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:769]
+2020-09-23 17:15:17,417 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 723, in create_show_submission
+    venue = venue_arr[0]
+IndexError: list index out of range
+2020-09-23 17:16:10,124 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:16:16,845 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedTable: relation "arists" does not exist
+LINE 1: SELECT * FROM arists WHERE id = 64746
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 724, in create_show_submission
+    artist_arr = query_to_dict(db.engine.execute(sql))
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedTable) relation "arists" does not exist
+LINE 1: SELECT * FROM arists WHERE id = 64746
+                      ^
+
+[SQL: SELECT * FROM arists WHERE id = 64746]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 17:16:37,898 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:21:21,210 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:22:41,025 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "INSRT"
+LINE 1: INSRT INTO shows (show_time, venue_id, artist_id) VALUES (20...
+        ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 735, in create_show_submission
+    db.engine.execute(sql)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "INSRT"
+LINE 1: INSRT INTO shows (show_time, venue_id, artist_id) VALUES (20...
+        ^
+
+[SQL: INSRT INTO shows (show_time, venue_id, artist_id) VALUES (2020-09-24 17:00:00, 10, 3);]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 17:22:55,085 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:23:00,378 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.SyntaxError: syntax error at or near "17"
+LINE 1: ...how_time, venue_id, artist_id) VALUES (2020-09-24 17:00:00, ...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 735, in create_show_submission
+    db.engine.execute(sql)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.SyntaxError) syntax error at or near "17"
+LINE 1: ...how_time, venue_id, artist_id) VALUES (2020-09-24 17:00:00, ...
+                                                             ^
+
+[SQL: INSERT INTO shows (show_time, venue_id, artist_id) VALUES (2020-09-24 17:00:00, 10, 3);]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 17:23:52,489 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:23:58,661 ERROR: Exception on /shows/create [POST] [in C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+psycopg2.errors.UndefinedColumn: column "show_time" of relation "shows" does not exist
+LINE 1: INSERT INTO shows (show_time, venue_id, artist_id) VALUES ('...
+                           ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "C:/Projects/Udacity/Python/Fyyur/app.py", line 735, in create_show_submission
+    db.engine.execute(sql)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 2237, in execute
+    return connection.execute(statement, *multiparams, **params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "C:\Users\Major Ahmed\AppData\Local\Programs\Python\Python37\lib\site-packages\sqlalchemy\engine\default.py", line 593, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.ProgrammingError: (psycopg2.errors.UndefinedColumn) column "show_time" of relation "shows" does not exist
+LINE 1: INSERT INTO shows (show_time, venue_id, artist_id) VALUES ('...
+                           ^
+
+[SQL: INSERT INTO shows (show_time, venue_id, artist_id) VALUES ('2020-09-24 17:00:00', 10, 3);]
+(Background on this error at: http://sqlalche.me/e/13/f405)
+2020-09-23 17:24:32,211 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:26:15,986 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:27:00,230 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:31:23,841 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
+2020-09-23 17:31:49,287 INFO: errors [in C:/Projects/Udacity/Python/Fyyur/app.py:767]
