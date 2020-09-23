@@ -110,17 +110,17 @@ def show_venue(venue_id):
   venue =  venue_arr[0]
 
   # Getting the venue past show arr
-  sql = text(f"SELECT * from shows WHERE venue_id = {venue['id']} AND show_date < now();")
+  sql = text(f"SELECT shows.show_date, shows.artist_id FROM shows INNER JOIN venues ON shows.venue_id = venues.id WHERE venues.id = {venue_id} AND shows.show_date < now();")
   venue_past_show = query_to_dict(db.engine.execute(sql))
 
   # Getting the venues upcoming shows
-  sql = text(f"SELECT * from shows WHERE venue_id = {venue['id']} AND show_date > now();")
+  sql = text(f"SELECT shows.show_date, shows.artist_id FROM shows INNER JOIN venues ON shows.venue_id = venues.id WHERE venues.id = {venue_id} AND shows.show_date > now();")
   venue_upcoming_show = query_to_dict(db.engine.execute(sql))
 
   # Forming the past shows arr
   venue_past_show_with_artist_details = []
   for show in venue_past_show:
-    sql = text(f"SELECT * from artists WHERE id = {show['artist_id']};")
+    sql = text(f"SELECT shows.show_date, artists.id, artists.name, artists.image_link FROM shows INNER JOIN artists ON shows.artist_id = artists.id WHERE artists.id = {show['artist_id']} AND shows.show_date > now();")
     show_artist = query_to_dict(db.engine.execute(sql))[0]
     venue_past_show_with_artist_details.append({
       "artist_id": show_artist['id'],
@@ -132,8 +132,9 @@ def show_venue(venue_id):
   # Forming the upcoming shows arr
   venue_upcoming_show_with_artist_details = []
   for show in venue_upcoming_show:
-    sql = text(f"SELECT * from artists WHERE id = {show['artist_id']};")
+    sql = text(f"SELECT shows.show_date, artists.id, artists.name, artists.image_link FROM shows INNER JOIN artists ON shows.artist_id = artists.id WHERE artists.id = {show['artist_id']} AND shows.show_date > now();")
     show_artist = query_to_dict(db.engine.execute(sql))[0]
+    print(show_artist)
     venue_upcoming_show_with_artist_details.append({
       "artist_id": show_artist['id'],
       "artist_name": show_artist['name'],
@@ -240,7 +241,8 @@ def search_artists():
   # Forming the data
   data = []
   for artist in found_artists:
-    sql = text(f"SELECT * FROM shows WHERE artist_id = {artist['id']} AND show_date > now();")
+    sql = text(f"SELECT shows.show_date, shows.artist_id FROM shows INNER JOIN artisits ON shows.artist_id = artists.id WHERE artists.id = {artist['id']} AND shows.show_date > now();")
+    #sql = text(f"SELECT * FROM shows WHERE artist_id = {artist['id']} AND show_date > now();")
     upcoming_shows = query_to_dict(db.engine.execute(sql))
     data.append({
       "id":  artist['id'],
@@ -281,7 +283,7 @@ def show_artist(artist_id):
   #artist_past_show = [show for show in artist.shows if show.show_date < datetime.now()]
   artist_past_show_with_venue_details = []
   for show in artist_past_show:
-    sql = text(f"SELECT * from venues WHERE id = {show['venue_id']};")
+    sql = text(f"SELECT shows.show_date, venues.id, venues.name, venues.image_link FROM shows INNER JOIN venues ON shows.venue_id = venues.id WHERE venues.id = {show['venue_id']} AND shows.show_date < now();")
     show_venue = query_to_dict(db.engine.execute(sql))[0]
     artist_past_show_with_venue_details.append({
       "venue_id": show_venue['id'],
@@ -293,7 +295,7 @@ def show_artist(artist_id):
   # Forming the upcoming shows arr
   artist_upcoming_show_with_venue_details = []
   for show in artist_upcoming_show:
-    sql = text(f"SELECT * from venues WHERE id = {show['venue_id']};")
+    sql = text(f"SELECT shows.show_date, venues.id, venues.name, venues.image_link FROM shows INNER JOIN venues ON shows.venue_id = venues.id WHERE venues.id = {show['venue_id']} AND shows.show_date > now();")
     show_venue = query_to_dict(db.engine.execute(sql))[0]
     artist_upcoming_show_with_venue_details.append({
       "venue_id": show_venue['id'],
